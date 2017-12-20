@@ -21,6 +21,7 @@ if dein#load_state('/Users/takuya/.cache/dein')
   call dein#add('lervag/vimtex')
   call dein#add('w0ng/vim-hybrid')
   call dein#add('tomasr/molokai')
+  call dein#add('cocopon/iceberg.vim')
 
   " Required:
   call dein#end()
@@ -43,9 +44,12 @@ let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSuppor
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 let g:vimtex_view_general_options_latexmk = '-r 1'
 
+" colorscheme
+colorscheme iceberg
+
 " hybrid
-set background=dark
-colorscheme hybrid
+" set background=dark
+" colorscheme hybrid
 
 " molokai
 " let g:molokai_original = 1
