@@ -101,6 +101,7 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
+let g:python_host_prog = ('/opt/local/bin/python')
 
 "End dein Scripts-------------------------
 
