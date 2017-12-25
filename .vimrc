@@ -42,6 +42,9 @@ source $VIMRUNTIME/macros/matchit.vim " Vimの「%」を拡張する
 set wildmenu " コマンドモードの補完. タブキーで次の選択候補に.
 set history=5000 " 保存するコマンド履歴の数
 
+" complete
+set completeopt=preview,menuone
+
 " ペーストするときにインデントが二重に効かないように
 if &term =~ "xterm"
     let &t_SI .= "\e[?2004h"
@@ -71,22 +74,34 @@ if dein#load_state('/Users/takuya/.cache/dein')
   " Required:
   call dein#add('/Users/takuya/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-  " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('Shougo/unite.vim')
-  call dein#add('itchyny/lightline.vim')
-  call dein#add('bronson/vim-trailing-whitespace')
-  call dein#add('Yggdroot/indentLine')
-  call dein#add('lervag/vimtex')
-  call dein#add('w0ng/vim-hybrid')
-  call dein#add('tomasr/molokai')
-  call dein#add('cocopon/iceberg.vim')
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
+"  " Add or remove your plugins here:
+"  call dein#add('Shougo/neosnippet.vim')
+"  call dein#add('Shougo/neosnippet-snippets')
+"  call dein#add('Shougo/unite.vim')
+"  call dein#add('cohama/lexima.vim')
+"  call dein#add('itchyny/lightline.vim')
+"  call dein#add('bronson/vim-trailing-whitespace')
+"  call dein#add('Yggdroot/indentLine')
+"  call dein#add('lervag/vimtex')
+"  call dein#add('w0ng/vim-hybrid')
+"  call dein#add('tomasr/molokai')
+"  call dein#add('cocopon/iceberg.vim')
+"  call dein#add('Shougo/deoplete.nvim')
+"  if !has('nvim')
+"    call dein#add('roxma/nvim-yarp')
+"    call dein#add('roxma/vim-hug-neovim-rpc')
+"  endif
+"  call dein#add('zchee/deoplete-jedi')
+
+  " プラグインリストを収めた TOML ファイル
+  " 予め TOML ファイル（後述）を用意しておく
+  let g:rc_dir    = expand('~/.vim/rc')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+  " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
   " Required:
   call dein#end()
@@ -141,6 +156,11 @@ set laststatus=2
 set showmode
 set showcmd
 set ruler
+
+" lexima
+" call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
+" call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
+" call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
 
 " colorscheme
 colorscheme iceberg
