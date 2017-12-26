@@ -5,13 +5,13 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'Shougo/unite.vim'
 
 [[plugins]]
-repo = 'itchyny/lightline.vim'
-
-[[plugins]]
 repo = 'cohama/lexima.vim'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
@@ -20,7 +20,11 @@ repo = 'bronson/vim-trailing-whitespace'
 repo = 'Yggdroot/indentLine'
 
 [[plugins]]
-repo = 'lervag/vimtex'
+repo = 'tyru/caw.vim'
+hook_source = '''
+  nmap <C-k> <Plug>(caw:hatpos:toggle)
+  vmap <C-k> <Plug>(caw:hatpos:toggle)
+'''
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
@@ -33,9 +37,22 @@ repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
 repo = 'roxma/nvim-yarp'
+if = '!has("nvim")'
 
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
+if = '!has("nvim")'
 
 [[plugins]]
-repo = 'zchee/deoplete-jedi'
+repo = 'Shougo/neosnippet'
+hook_source = '''
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+'''
+on_i  = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
