@@ -77,21 +77,7 @@ if dein#load_state('/Users/takuya/.cache/dein')
 "  " Add or remove your plugins here:
 "  call dein#add('Shougo/neosnippet.vim')
 "  call dein#add('Shougo/neosnippet-snippets')
-"  call dein#add('Shougo/unite.vim')
-"  call dein#add('cohama/lexima.vim')
-"  call dein#add('itchyny/lightline.vim')
-"  call dein#add('bronson/vim-trailing-whitespace')
-"  call dein#add('Yggdroot/indentLine')
-"  call dein#add('lervag/vimtex')
-"  call dein#add('w0ng/vim-hybrid')
-"  call dein#add('tomasr/molokai')
-"  call dein#add('cocopon/iceberg.vim')
-"  call dein#add('Shougo/deoplete.nvim')
-"  if !has('nvim')
-"    call dein#add('roxma/nvim-yarp')
-"    call dein#add('roxma/vim-hug-neovim-rpc')
-"  endif
-"  call dein#add('zchee/deoplete-jedi')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
   " プラグインリストを収めた TOML ファイル
   " 予め TOML ファイル（後述）を用意しておく
@@ -161,6 +147,11 @@ set ruler
 " call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
 " call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
 " call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#)', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#"', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#''', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#]', 'leave': 1})
+" call lexima#add_rule({'char': '<TAB>', 'at': '\%#}', 'leave': 1})
 
 " colorscheme
 colorscheme iceberg
