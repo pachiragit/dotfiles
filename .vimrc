@@ -5,6 +5,7 @@ set fileencoding=utf-8 " 保存時の文字コード
 set fileencodings=utf-8,ucs-boms,euc-jp,cp932 " 読み込み時の文字コードの自動判別. 左側が優先される
 set fileformats=unix,mac,dos " 改行コードの自動判別. 左側が優先される
 set ambiwidth=double " □や○文字が崩れる問題を解決
+let g:tex_flavor='latex' 
 
 " tab/indent-----------------
 set expandtab " タブ入力を複数の空白入力に置き換える
@@ -105,53 +106,6 @@ endif
 let g:python_host_prog = ('/opt/local/bin/python')
 
 "End dein Scripts-------------------------
-
-" vimtex
-let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-let g:vimtex_view_general_options = '-r @line @pdf @tex'
-let g:vimtex_view_general_options_latexmk = '-r 1'
-
-" Use deoplete.
-let g:python3_host_prog = '/opt/local/bin/python'
-let g:deoplete#enable_at_startup = 1
-
-" neosnippet
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-" lightline
-set laststatus=2
-set showmode
-set showcmd
-set ruler
-
-" lexima
-" call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
-" call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
-" call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#)', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#"', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#''', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#]', 'leave': 1})
-" call lexima#add_rule({'char': '<TAB>', 'at': '\%#}', 'leave': 1})
 
 " colorscheme
 colorscheme iceberg

@@ -23,35 +23,25 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'cohama/lexima.vim'
-hook_post_source = '''
-  call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': ['tex', 'plaintex']})
-  call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': ['tex', 'plaintex']})
-  call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': ['tex', 'plaintex']})
-'''
-on_i = 1
-
-[[plugins]]
 repo = 'Shougo/unite.vim'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+hook_source = '''
+  set laststatus=2
+  set showmode
+  set showcmd
+  set ruler
+'''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
-
+ 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-
-[[plugins]]
-repo = 'tyru/caw.vim'
-hook_source = '''
-  nmap <C-k> <Plug>(caw:hatpos:toggle)
-  vmap <C-k> <Plug>(caw:hatpos:toggle)
-'''
+# [[plugins]]
+# repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
@@ -71,15 +61,8 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if = '!has("nvim")'
 
 [[plugins]]
-repo = 'Shougo/neosnippet'
-hook_source = '''
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
-  if has('conceal')
-    set conceallevel=2 concealcursor=niv
-  endif
+repo = 'tyru/caw.vim'
+hook_add = '''
+  nmap <C-m> <Plug>(caw:hatpos:toggle)
+  vmap <C-m> <Plug>(caw:hatpos:toggle)
 '''
-on_i  = 1
-on_ft = ['snippet']
-depends = ['neosnippet-snippets']
