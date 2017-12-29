@@ -1,0 +1,58 @@
+snippet align
+alias al
+    \begin{align}
+        ${1:}
+    \end{align}
+    ${2:}
+
+snippet align*
+alias aln
+    \begin{align}
+        ${1:}
+    \end{align}
+    ${2:}
+
+snippet itemize
+alias item
+    \begin{itemize}
+        \item ${1:}
+    \end{itemize}
+    ${2:}
+
+snippet enumerate
+alias enu
+    \begin{enumerate}
+        \item ${1:}
+    \end{enumerate}
+    ${2:}
+
+snippet figure
+alias fig
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=${1:10cm},clip]{${2:filename}}
+        \caption{${3:}}
+    \end{figure}
+    ${4:}
+
+snippet matrix
+alias mat
+    \left(
+        \begin{array}{${1:ccc}}
+            ${2:ma & tr & ix}
+         \end{array}
+    \right)
+    ${3:}
+
+snippet table
+alias tabl
+    \begin{table}[H]
+        \centering
+        \caption{${1:}}
+        \begin{tabular}{|${2:c}|}
+            \hline
+            ${3:}
+            \hline
+        \end{tabular}
+    \end{table}
+    ${4:}
