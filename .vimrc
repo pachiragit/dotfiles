@@ -1,3 +1,4 @@
+set mouse=a
 " encoding-----------------
 set encoding=utf-8
 scriptencoding utf-8
@@ -108,7 +109,10 @@ let g:python_host_prog = ('/opt/local/bin/python')
 "End dein Scripts-------------------------
 
 " colorscheme
-colorscheme iceberg
+" colorscheme iceberg
+set background=dark
+" colorscheme base16-tomorrow-night
+colorscheme base16-tomorrow-night
 
 " hybrid
 " set background=dark
