@@ -36,7 +36,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
- 
+
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
@@ -51,6 +51,12 @@ repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+
+[[plugins]]
+repo = 'chriskempson/base16-vim'
 
 [[plugins]]
 repo = 'roxma/nvim-yarp'

@@ -5,7 +5,7 @@ set fileencoding=utf-8 " 保存時の文字コード
 set fileencodings=utf-8,ucs-boms,euc-jp,cp932 " 読み込み時の文字コードの自動判別. 左側が優先される
 set fileformats=unix,mac,dos " 改行コードの自動判別. 左側が優先される
 set ambiwidth=double " □や○文字が崩れる問題を解決
-let g:tex_flavor='latex' 
+let g:tex_flavor='latex'
 
 " tab/indent-----------------
 set expandtab " タブ入力を複数の空白入力に置き換える
@@ -34,6 +34,8 @@ nnoremap <down> gj
 nnoremap <up> gk
 " バックスペースキーの有効化
 set backspace=indent,eol,start
+" マウスの有効化
+set mouse=a
 
 " ()/jump-----------------
 set showmatch " 括弧の対応関係を一瞬表示する
@@ -108,7 +110,7 @@ let g:python_host_prog = ('/opt/local/bin/python')
 "End dein Scripts-------------------------
 
 " colorscheme
-colorscheme iceberg
+" colorscheme iceberg
 
 " hybrid
 " set background=dark
@@ -117,3 +119,17 @@ colorscheme iceberg
 " molokai
 " let g:molokai_original = 1
 " colorscheme molokai
+
+" base16
+" let base16colorspace=256  " Access colors present in 256 colorspace
+" colorscheme base16-default-dark
+
+" tender
+" if (has("termguicolors"))
+  " set termguicolors
+" endif
+
+let g:cpp_class_scope_highlight = 1
+syntax enable
+colorscheme tender
+let g:lightline = {'colorscheme': 'tender'}
