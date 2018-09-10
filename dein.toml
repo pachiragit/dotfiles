@@ -53,6 +53,9 @@ repo = 'tomasr/molokai'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
+repo = 'jacoborus/tender.vim'
+
+[[plugins]]
 repo = 'chriskempson/base16-vim'
 
 [[plugins]]

@@ -27,6 +27,9 @@ hook_source = '''
 on_ft = ['tex']
 
 [[plugins]]
+repo = 'kovisoft/slimv'
+
+[[plugins]]
 repo = 'cohama/lexima.vim'
 hook_post_source = '''
   call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': ['tex', 'plaintex']})
