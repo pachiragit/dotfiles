@@ -4,6 +4,8 @@ scriptencoding utf-8
 set fileencoding=utf-8 " 保存時の文字コード
 set fileencodings=utf-8,ucs-boms,euc-jp,cp932 " 読み込み時の文字コードの自動判別. 左側が優先される
 set fileformats=unix,mac,dos " 改行コードの自動判別. 左側が優先される
+set guifont=Cica:h16
+set printfont=Cica:h12
 set ambiwidth=double " □や○文字が崩れる問題を解決
 let g:tex_flavor='latex'
 
@@ -125,11 +127,28 @@ let g:python_host_prog = ('/opt/local/bin/python')
 " colorscheme base16-default-dark
 
 " tender
-" if (has("termguicolors"))
-  " set termguicolors
-" endif
-
 let g:cpp_class_scope_highlight = 1
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 syntax enable
 colorscheme tender
-let g:lightline = {'colorscheme': 'tender'}
+
+let g:lightline = {
+      \ 'component_function': {
+      \   'filetype': 'MyFiletype',
+      \   'fileformat': 'MyFileformat',
+      \ }
+      \ }
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
+" let g:lightline = {'colorscheme': 'tender'}
