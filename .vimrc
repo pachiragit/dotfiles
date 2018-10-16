@@ -127,17 +127,11 @@ let g:python_host_prog = ('/opt/local/bin/python')
 " colorscheme base16-default-dark
 
 " tender
-<<<<<<< HEAD
-" if (has("termguicolors"))
-  " set termguicolors
-" endif
 
 " colorschemeより前に記述
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
 
-=======
->>>>>>> 0407ab0e72ba98336d7b9a0e85e837dcd3767d56
 let g:cpp_class_scope_highlight = 1
 
 if (has("termguicolors"))
