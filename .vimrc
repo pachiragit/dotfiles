@@ -127,26 +127,24 @@ let g:python_host_prog = ('/opt/local/bin/python')
 " colorscheme base16-default-dark
 
 " tender
+if (has("termguicolors"))
+ set termguicolors
+endif
 
 " colorschemeより前に記述
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
 
 let g:cpp_class_scope_highlight = 1
-
-if (has("termguicolors"))
- set termguicolors
-endif
-
 syntax enable
 colorscheme tender
 
 let g:lightline = {
-      \ 'component_function': {
-      \   'filetype': 'MyFiletype',
-      \   'fileformat': 'MyFileformat',
-      \ }
-      \ }
+     \ 'component_function': {
+     \   'filetype': 'MyFiletype',
+     \   'fileformat': 'MyFileformat',
+     \ }
+     \ }
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
