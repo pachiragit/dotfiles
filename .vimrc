@@ -1,4 +1,3 @@
-set mouse=a
 " encoding-----------------
 set encoding=utf-8
 scriptencoding utf-8
@@ -36,7 +35,7 @@ nnoremap <up> gk
 " バックスペースキーの有効化
 set backspace=indent,eol,start
 " マウスの有効化
-set mouse=a
+" set mouse=a
 
 " ()/jump-----------------
 set showmatch " 括弧の対応関係を一瞬表示する
@@ -129,6 +128,10 @@ let g:python_host_prog = ('/opt/local/bin/python')
 " if (has("termguicolors"))
   " set termguicolors
 " endif
+
+" colorschemeより前に記述
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
 
 let g:cpp_class_scope_highlight = 1
 syntax enable
