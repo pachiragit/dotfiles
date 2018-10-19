@@ -127,13 +127,9 @@ let g:python_host_prog = ('/opt/local/bin/python')
 " colorscheme base16-default-dark
 
 " tender
-if (has("termguicolors"))
- set termguicolors
-endif
-
 " colorschemeより前に記述
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
+autocmd ColorScheme * highlight Normal guibg=none ctermbg=none
+autocmd ColorScheme * highlight LineNr guibg=none ctermbg=none
 
 let g:cpp_class_scope_highlight = 1
 syntax enable
@@ -155,3 +151,12 @@ function! MyFileformat()
 endfunction
 
 " let g:lightline = {'colorscheme': 'tender'}
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+" **Test space**
+" highlight Normal ctermbg=none
+" highlight LineNr ctermbg=none
+" highlight Normal guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
