@@ -124,6 +124,7 @@ let g:python_host_prog = ('/opt/local/bin/python')
 
 " base16
 " let base16colorspace=256  " Access colors present in 256 colorspace
+" set termguicolors
 " colorscheme base16-default-dark
 
 " tender
@@ -136,11 +137,11 @@ syntax enable
 colorscheme tender
 
 let g:lightline = {
-     \ 'component_function': {
-     \   'filetype': 'MyFiletype',
-     \   'fileformat': 'MyFileformat',
-     \ }
-     \ }
+    \ 'component_function': {
+    \   'filetype': 'MyFiletype',
+    \   'fileformat': 'MyFileformat',
+    \ }
+    \ }
 
 function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
