@@ -23,6 +23,8 @@ hook_source = '''
   let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
   let g:vimtex_view_general_options = '-r @line @pdf @tex'
   let g:vimtex_view_general_options_latexmk = '-r 1'
+  let g:vimtex_view_method='skim'
+  let g:vimtex_compiler_progname = 'nvr'
   call deoplete#custom#var('omni', 'input_patterns', {
           \ 'tex': g:vimtex#re#deoplete
           \})

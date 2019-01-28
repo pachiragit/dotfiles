@@ -1,8 +1,10 @@
 # export TERM='xterm-256color'
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin"${PATH}
 export PATH="/opt/local/bin:"${PATH}
+export PATH="/Users/takuya/Library/Python/3.7/bin:"${PATH}
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 alias mvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
+alias nvimtex="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 # 少し凝った zshrc
